@@ -1,10 +1,20 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
-  styleUrl: './app.component.css'
+  styleUrls: ['./app.component.css']
 })
-export class AppComponent {
-  title = 'TP_Angular';
+export class AppComponent implements OnInit {
+  currentDate: Date;
+
+  constructor() { 
+    this.currentDate = new Date(); // Initialiser la date actuelle
+  }
+
+  ngOnInit(): void {
+    setInterval(() => {
+      this.currentDate = new Date(); // Mettre à jour la date actuelle toutes les secondes
+    }, 1000);
+  }
 }

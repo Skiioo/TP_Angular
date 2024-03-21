@@ -1,0 +1,34 @@
+<div class="flex justify-center items-center mt-12">
+  <h1 class="text-2xl">Liste des spécialitées</h1>
+</div>
+<div class="flex justify-center">
+  <img
+    class="w-1/2 h-auto"
+    src="https://treesushi-api.000webhostapp.com/images/img_etud.jpg"
+    alt="Image des étudiants"
+  />
+</div>
+<div class="w-3/4 mx-auto m-4">
+  <table class="min-w-full divide-y divide-gray-200 items-center mb-12">
+    <thead class="bg-gray-50">
+      <tr>
+        <th
+          class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider"
+        >
+          ID
+        </th>
+        <th
+          class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider"
+        >
+          Libellé
+        </th>
+      </tr>
+    </thead>
+    <tbody class="bg-white divide-y divide-gray-200">
+      <tr *ngFor="let specialite of specialite">
+        <td class="px-6 py-4 whitespace-nowrap">{{ specialite._idSpec }}</td>
+        <td class="px-6 py-4 whitespace-nowrap">{{ specialite._libelle }}</td>
+      </tr>
+    </tbody>
+  </table>
+</div>
